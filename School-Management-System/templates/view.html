@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h3>Students Details</h3>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ user.name }}</h4>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}.</p>
+            <p class="card-text"><strong>course:</strong> {{ user.course }}</p>
+             <p class="card-text"><strong>Division:</strong> {{ user.division }}</p>
+             <p class="card-text"><strong>Rollno:</strong> {{ user.rollno }}</p>
+             <p class="card-text"><strong>Mentorname:</strong> {{ user.mentor_name }}</p>
+
+
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<h3>Edit Students</h3>
+	
+	
+	<form action="{{ url_for('edit') }}" method="post">
+		{% if mesage is defined and mesage %}
+		<div class="alert alert-warning">{{ mesage }}</div>
+	{% endif %}
+	<div class="form-group">
+		<label for="name">Name:</label>
+		<input type="text" class="form-control" id="name" name="name" value="{{ editUser.name }}" autocomplete="name">
+
+
+	</div>
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input type="text" class="form-control" id="email" name="email" value="{{ editUser.email }}" autocomplete="email">
+	</div>
+
+	<div class="form-group">
+		<label for="course">Course:</label>
+		<select class="form-control" id="course" name="course" autocomplete="course">
+			<option value="" disabled selected>Select course</option>
+			<option value="Computer Science" {% if editUser.course == 'Computer Science' %}selected{% endif %}>Computer Science</option>
+			<option value="Information Technology" {% if editUser.course == 'Information Technology' %}selected{% endif %}>Information Technology</option>
+			<option value="Bcom" {% if editUser.course == 'Bcom' %}selected{% endif %}>Bcom</option>
+			<option value="Bmm" {% if editUser.course == 'Bmm' %}selected{% endif %}>Bmm</option>
+			<option value="Bms" {% if editUser.course == 'Bms' %}selected{% endif %}>Bms</option>
+			<option value="CA" {% if editUser.course == 'CA' %}selected{% endif %}>CA</option>
+		</select>
+	</div>
+	
+
+
+
+
+
+	<div class="form-group">
+		<label for="division">Division:</label>
+		<input type="text" class="form-control" id="division" name="division" value="{{ editUser.division }}" autocomplete="division">
+	</div>
+
+	<div class="form-group">
+		<label for="rollno">Rollno:</label>
+		<input type="number" class="form-control" id="rollno" name="rollno" value="{{ editUser.rollno }}"autocomplete="rollno">
+	</div>
+
+	<div class="form-group">
+		<label for="mentorname">Mentor Name:</label>
+		<input type="text" class="form-control" id="mentorname" name="mentorname" value="{{ editUser.mentorname }}"autocomplete="mentorname">
+	</div>
+
+
+	<input type="hidden" id="userid" name="userid" value="{{ editUser.id }}" autocomplete="userid">
+	<button type="submit" class="btn btn-primary">Save</button>
+
+	 </form>
+
+</body>
+</html>
